@@ -25,9 +25,17 @@ class scraper():
         # Starting Driver
         driver = webdriver.Chrome("../drivers/chromedriver.exe")
         driver.get("https://asknature.org/")
-        time.sleep(2)
+        time.sleep(3)
 
-    def 
+        self.__driver = driver
+
+    def home_page_click(self, search):
+        try:
+            elem = self.__driver.find_element_by_xpath(f'//a[@data-title = "{search}"]')
+            elem.click()
+        except:
+            print("This element is not present on the website")
 
 if __name__ == "__main__":
-    scraper()
+    srape = scraper()
+    srape.home_page_click("Biological Strategies")
