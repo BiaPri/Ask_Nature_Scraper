@@ -20,11 +20,12 @@ class scraper():
         options.add_argument("--ignore-certificate-errors")
         options.add_argument("--incognito")
         options.add_argument("--headless")
-        options.add_argument("--no-sandbox")
         options.add_argument("--disable-popup-blocking")
-        options.add_argument("--disable-dev-shm-usage")
 
         # Starting Driver
-        driver = webdriver.Chrome("chromedriver.exe")
+        driver = webdriver.Chrome("../drivers/chromedriver.exe")
         driver.get("https://asknature.org/")
         time.sleep(3.5)
+
+if __name__ == "__main__":
+    scraper()

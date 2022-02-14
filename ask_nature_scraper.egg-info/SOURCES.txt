@@ -1,7 +1,0 @@
-README.md
-setup.py
-ask_nature_scraper.egg-info/PKG-INFO
-ask_nature_scraper.egg-info/SOURCES.txt
-ask_nature_scraper.egg-info/dependency_links.txt
-ask_nature_scraper.egg-info/requires.txt
-ask_nature_scraper.egg-info/top_level.txt
