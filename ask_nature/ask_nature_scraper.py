@@ -1,5 +1,6 @@
+import os
 import time
-#import unidecode
+import unidecode
 import pandas as pd
 
 # Web Scraping Tools
@@ -23,7 +24,9 @@ class scraper():
         options.add_argument("--disable-popup-blocking")
 
         # Starting Driver
-        driver = webdriver.Chrome("../drivers/chromedriver.exe")
+        dir = os.path.dirname(__file__)
+        location = os.path.join(dir, "drivers", "chromedriver.exe")
+        driver = webdriver.Chrome(location)
         driver.get("https://asknature.org/")
         time.sleep(3)
 

@@ -1,3 +1,4 @@
 pandas
 selenium
 beautifulsoup4
+unidecode
