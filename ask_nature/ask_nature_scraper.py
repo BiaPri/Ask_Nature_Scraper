@@ -25,7 +25,9 @@ class scraper():
         # Starting Driver
         driver = webdriver.Chrome("../drivers/chromedriver.exe")
         driver.get("https://asknature.org/")
-        time.sleep(3.5)
+        time.sleep(2)
+
+    def 
 
 if __name__ == "__main__":
     scraper()
