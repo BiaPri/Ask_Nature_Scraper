@@ -32,23 +32,22 @@ class scraper():
 
     def home_page_click(self, search):
         try:
-            elem = self.__driver.find_element_by_xpath(f'//a[@data-title = "{search}"]')
+            elem = self.__driver.find_element(f'//a[@data-title = "{search}"]')
             elem.click()
         except:
             print("This element is not present on the website")
             
-    def collect_data(self, number):
+    def collect_data(self):
         titles = []
         dico = {}
 
         html_doc = self.__driver.page_source
         soup = BeautifulSoup(html_doc, 'html.parser')
-        soup
 
-        for elem in soup.find_all('h4', class_='widont')[4:]:
-            titles.append(elem.text)
+        for elem in soup.find_all('div', class_='preview-text over-image'):
+            titles.append(elem.text.strip('/n')[1])
 
-        for i in range(number):
+        for i in range(len(titles)):
             elem = self.__driver.find_elements_by_xpath('//div[@class="preview-text over-image"]')[i]
             elem.click()
             time.sleep(2)
@@ -69,4 +68,4 @@ class scraper():
 if __name__ == "__main__":
     srape = scraper()
     srape.home_page_click("Biological Strategies")
-    print(srape.collect_data(3))
+    srape.collect_data()
