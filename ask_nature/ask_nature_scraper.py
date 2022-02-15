@@ -38,6 +38,10 @@ class scraper():
             print("This element is not present on the website")
             
     def collect_data(self):
+        
+        # Attention !
+        self.home_page_click("Biological Strategies")
+        
         titles = []
         dico = {}
 
